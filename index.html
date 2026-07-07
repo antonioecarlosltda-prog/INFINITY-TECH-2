@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INFINITY OFERTAS | Eletrônicos e Utilidades</title>
+  <meta name="description" content="Vitrine de ofertas de eletrônicos e utilidades com links de afiliado para o Mercado Livre." />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --blue: #0057ff;
+      --blue-dark: #003fc2;
+      --green: #00b86b;
+      --black: #111827;
+      --gray: #667085;
+      --light: #f5f8ff;
+      --border: #e5e7eb;
+      --white: #ffffff;
+      --yellow: #facc15;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--black);
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .topbar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .container {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .logo {
+      font-weight: 900;
+      color: var(--blue);
+      font-size: 24px;
+      white-space: nowrap;
+    }
+
+    .search {
+      flex: 1;
+      position: relative;
+    }
+
+    .search input {
+      width: 100%;
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .search input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(0, 87, 255, 0.1);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      font-weight: 700;
+      font-size: 14px;
+      color: #344054;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 18px;
+      border-radius: 14px;
+      border: none;
+      background: var(--blue);
+      color: white;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--blue-dark);
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      padding: 70px 0;
+      background:
+        radial-gradient(circle at top right, rgba(0,87,255,.35), transparent 35%),
+        linear-gradient(135deg, #07142f, #101828);
+      color: white;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      background: rgba(255,255,255,0.13);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 68px);
+      line-height: 1.02;
+      margin-bottom: 20px;
+      letter-spacing: -2px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #d7e3ff;
+      max-width: 650px;
+      margin-bottom: 26px;
+    }
+
+    .hero-card {
+      background: white;
+      color: var(--black);
+      border-radius: 30px;
+      padding: 24px;
+      box-shadow: 0 30px 70px rgba(0,0,0,.25);
+    }
+
+    .hero-product {
+      min-height: 260px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #e8f0ff, #ffffff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 62px;
+      margin-bottom: 18px;
+    }
+
+    .hero-card h3 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .hero-card p {
+      color: var(--gray);
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+
+    .section {
+      padding: 54px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .section h2 {
+      font-size: 36px;
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    .muted {
+      color: var(--gray);
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .cat {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 18px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .cat:hover, .cat.active {
+      border-color: var(--blue);
+      box-shadow: 0 14px 35px rgba(0,87,255,.12);
+      transform: translateY(-2px);
+    }
+
+    .cat .icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .cat strong {
+      display: block;
+      font-size: 17px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 24px;
+    }
+
+    .filters {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 20px;
+      height: fit-content;
+      position: sticky;
+      top: 104px;
+    }
+
+    .filters h3 {
+      margin-bottom: 16px;
+    }
+
+    .filter-group {
+      margin-bottom: 18px;
+    }
+
+    .filter-group label {
+      display: block;
+      font-size: 14px;
+      color: var(--gray);
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    select, .filter-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: white;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid var(--border);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .tab.active {
+      background: var(--blue);
+      color: white;
+      border-color: var(--blue);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .product {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 16px;
+      position: relative;
+      transition: .2s;
+    }
+
+    .product:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 45px rgba(15,23,42,.1);
+    }
+
+    .product-image {
+      height: 190px;
+      background: linear-gradient(135deg, #eef4ff, #ffffff);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 58px;
+      margin-bottom: 14px;
+      border: 1px solid #edf2ff;
+    }
+
+    .product-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .tag {
+      background: #eaf2ff;
+      color: var(--blue);
+      padding: 5px 9px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .heart {
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .heart.active {
+      background: #fff1f2;
+      border-color: #fb7185;
+    }
+
+    .product h3 {
+      font-size: 17px;
+      min-height: 48px;
+      margin-bottom: 8px;
+    }
+
+    .rating {
+      color: #ca8a04;
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+
+    .price {
+      color: var(--blue);
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .old {
+      color: #98a2b3;
+      text-decoration: line-through;
+      font-size: 14px;
+    }
+
+    .shipping {
+      color: var(--green);
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .card-actions {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+    }
+
+    .compare {
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 12px;
+      padding: 0 12px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .flash {
+      background: linear-gradient(135deg, #0057ff, #003fc2);
+      color: white;
+      border-radius: 30px;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .timer {
+      background: rgba(255,255,255,.14);
+      padding: 16px 22px;
+      border-radius: 18px;
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .compare-box {
+      display: none;
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: min(420px, calc(100% - 36px));
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: 0 25px 70px rgba(0,0,0,.18);
+      padding: 18px;
+      z-index: 100;
+    }
+
+    .compare-box.show {
+      display: block;
+    }
+
+    .compare-box ul {
+      margin: 12px 0 0 18px;
+      color: var(--gray);
+    }
+
+    .faq {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .faq-card, .review-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 20px;
+    }
+
+    footer {
+      background: #07142f;
+      color: white;
+      padding: 42px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap: 24px;
+    }
+
+    footer p, footer li {
+      color: #cbd5e1;
+      margin-top: 8px;
+      list-style: none;
+    }
+
+    .affiliate-warning {
+      margin-top: 26px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 20px;
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .nav {
+        flex-wrap: wrap;
+        padding: 14px 0;
+      }
+      .nav-links {
+        display: none;
+      }
+      .search {
+        order: 3;
+        flex-basis: 100%;
+      }
+      .hero-grid, .layout, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .filters {
+        position: static;
+      }
+      .flash {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .grid, .categories, .faq {
+        grid-template-columns: 1fr;
+      }
+      .section h2 {
+        font-size: 29px;
+      }
+      .hero {
+        padding: 44px 0;
+      }
+      .hero h1 {
+        font-size: 42px;
+      }
+      .hero p {
+        font-size: 17px;
+      }
+      .section-head {
+        display: block;
+      }
+      .product-image {
+        height: 170px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#" class="logo">INFINITY OFERTAS</a>
+
+      <div class="search">
+        <input id="searchInput" type="search" placeholder="Pesquisar fone, mouse, carregador, smartwatch..." />
+      </div>
+
+      <nav class="nav-links">
+        <a href="#categorias">Categorias</a>
+        <a href="#ofertas">Ofertas</a>
+        <a href="#mais-vendidos">Mais Vendidos</a>
+        <a href="#lancamentos">Lançamentos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <a class="btn" href="#ofertas">Ver Promoções</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">Ofertas selecionadas todos os dias</span>
+          <h1>As Melhores Ofertas da Internet</h1>
+          <p>Eletrônicos e utilidades com excelente custo-benefício. Clique em comprar e finalize com segurança no Mercado Livre.</p>
+          <a class="btn" href="#ofertas">Ver Ofertas Agora</a>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-product">⚡</div>
+          <h3>Vitrine de ofertas afiliadas</h3>
+          <p>Este site não vende diretamente. Ele leva o cliente para o Mercado Livre usando seu link de afiliado.</p>
+          <a class="btn" href="#ofertas">Explorar produtos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="categorias">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Compre por nicho</h2>
+            <p class="muted">Categorias organizadas para o cliente achar rápido.</p>
+          </div>
+        </div>
+        <div class="categories" id="categoryGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="ofertas">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Ofertas do Dia</h2>
+            <p class="muted">Use a pesquisa, filtros e abas para encontrar produtos.</p>
+          </div>
+        </div>
+
+        <div class="layout">
+          <aside class="filters">
+            <h3>Filtros</h3>
+
+            <div class="filter-group">
+              <label>Categoria</label>
+              <select id="categoryFilter">
+                <option value="Todas">Todas</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label>Faixa de preço</label>
+              <select id="priceFilter">
+                <option value="all">Todos</option>
+                <option value="0-100">Até R$ 100</option>
+                <option value="100-200">R$ 100 a R$ 200</option>
+                <option value="200-99999">Acima de R$ 200</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label>Marca</label>
+              <select id="brandFilter">
+                <option value="Todas">Todas</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label>Avaliação mínima</label>
+              <select id="ratingFilter">
+                <option value="0">Todas</option>
+                <option value="4.5">4.5+</option>
+                <option value="4.7">4.7+</option>
+                <option value="4.8">4.8+</option>
+              </select>
+            </div>
+
+            <button class="btn" style="width:100%" onclick="clearFilters()">Limpar filtros</button>
+          </aside>
+
+          <div>
+            <div class="tabs" id="tabs"></div>
+            <div class="grid" id="productGrid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="mais-vendidos">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Mais Vendidos</h2>
+            <p class="muted">Ranking com produtos em destaque.</p>
+          </div>
+        </div>
+        <div class="grid" id="topProducts"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container flash">
+        <div>
+          <h2>Ofertas Relâmpago</h2>
+          <p>Promoções por tempo limitado. Troque os produtos e links quando quiser.</p>
+        </div>
+        <div class="timer" id="timer">02:59:59</div>
+      </div>
+    </section>
+
+    <section class="section" id="lancamentos">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Lançamentos</h2>
+            <p class="muted">Produtos recém adicionados à vitrine.</p>
+          </div>
+        </div>
+        <div class="grid" id="newProducts"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Avaliações dos clientes</h2>
+            <p class="muted">Comentários para gerar confiança.</p>
+          </div>
+        </div>
+        <div class="faq">
+          <div class="review-card"><strong>★★★★★</strong><p>Gostei da organização das ofertas. Encontrei rápido o produto que queria.</p></div>
+          <div class="review-card"><strong>★★★★★</strong><p>O botão me levou direto para o Mercado Livre, muito prático.</p></div>
+          <div class="review-card"><strong>★★★★★</strong><p>Site simples, rápido e fácil de usar pelo celular.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>FAQ</h2>
+            <p class="muted">Perguntas frequentes.</p>
+          </div>
+        </div>
+        <div class="faq">
+          <div class="faq-card"><h3>A compra é feita aqui?</h3><p>Não. Você será redirecionado para o Mercado Livre.</p></div>
+          <div class="faq-card"><h3>O site é afiliado?</h3><p>Sim. Podemos receber comissão sem custo extra para você.</p></div>
+          <div class="faq-card"><h3>Os preços mudam?</h3><p>Sim. O preço final é sempre o exibido na plataforma oficial.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="compare-box" id="compareBox">
+    <h3>Comparador</h3>
+    <p class="muted">Selecione até 3 produtos para comparar.</p>
+    <ul id="compareList"></ul>
+  </div>
+
+  <footer id="contato">
+    <div class="container footer-grid">
+      <div>
+        <h3>INFINITY OFERTAS</h3>
+        <p>Os melhores eletrônicos e utilidades com ofertas selecionadas todos os dias.</p>
+      </div>
+      <div>
+        <h3>Categorias</h3>
+        <ul><li>Áudio</li><li>Gamer</li><li>Celulares</li><li>Utilidades</li></ul>
+      </div>
+      <div>
+        <h3>Links úteis</h3>
+        <ul><li>Política de Privacidade</li><li>Termos de Uso</li><li>Aviso de Afiliado</li></ul>
+      </div>
+      <div>
+        <h3>Contato</h3>
+        <p>Instagram: @infinityofertas</p>
+        <p>WhatsApp: coloque seu número aqui</p>
+      </div>
+    </div>
+    <div class="container affiliate-warning">
+      Este site participa de programas de afiliados. Ao comprar pelos nossos links, podemos receber comissão sem custo extra para você.
+    </div>
+  </footer>
+
+<script>
+const products = [
+  {
+    "id": 1,
+    "name": "Fone Bluetooth - Oferta 1",
+    "category": "Áudio",
+    "icon": "🎧",
+    "brand": "Samsung",
+    "price": 47.45,
+    "oldPrice": 78.90,
+    "discount": 39,
+    "rating": 4.7,
+    "reviews": 8675,
+    "shipping": "Frete grátis",
+    "badge": "Mais vendido",
+    "link": "https://meli.la/1VbAi6p",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_2X_653869-MLA106986107684_022026-F.webp"
+  },
+  {
+    "id": 2,
+    "name": "Smartwatch - Oferta 2",
+    "category": "Smartwatches",
+    "icon": "⌚",
+    "brand": "Xiaomi",
+    "price": 141,
+    "oldPrice": 169,
+    "discount": 17,
+    "rating": 4.4,
+    "reviews": 93,
+    "shipping": "Entrega rápida",
+    "badge": "Promoção",
+    "link": "https://meli.la/1hqjcBz",
+    "image": ""
+  },
+  {
+    "id": 3,
+    "name": "Mouse Sem Fio - Oferta 3",
+    "category": "Informática",
+    "icon": "💻",
+    "brand": "Baseus",
+    "price": 153,
+    "oldPrice": 189,
+    "discount": 19,
+    "rating": 4.5,
+    "reviews": 106,
+    "shipping": "Frete grátis",
+    "badge": "Promoção",
+    "link": "https://meli.la/1GMZTCD"
+  },
+  {
+    "id": 4,
+    "name": "Mouse Gamer - Oferta 4",
+    "category": "Gamer",
+    "icon": "🎮",
+    "brand": "Logitech",
+    "price": 165,
+    "oldPrice": 209,
+    "discount": 21,
+    "rating": 4.6,
+    "reviews": 119,
+    "shipping": "Entrega rápida",
+    "badge": "Oferta do dia",
+    "link": "https://meli.la/1xd3Q2q"
+  },
+  {
+    "id": 5,
+    "name": "Carregador Turbo - Oferta 5",
+    "category": "Celulares",
+    "icon": "📱",
+    "brand": "Multilaser",
+    "price": 177,
+    "oldPrice": 229,
+    "discount": 23,
+    "rating": 4.7,
+    "reviews": 132,
+    "shipping": "Frete grátis",
+    "badge": "Promoção",
+    "link": "https://meli.la/265T1q2"
+  },
+  {
+    "id": 6,
+    "name": "Lâmpada Inteligente - Oferta 6",
+    "category": "Casa Inteligente",
+    "icon": "🏠",
+    "brand": "Genérico",
+    "price": 229,
+    "oldPrice": 249,
+    "discount": 8,
+    "rating": 4.8,
+    "reviews": 145,
+    "shipping": "Entrega rápida",
+    "badge": "Promoção",
+    "link": "https://meli.la/2xm3bsq"
+  },
+  {
+    "id": 7,
+    "name": "Carregador Rápido - Oferta 7",
+    "category": "Energia",
+    "icon": "🔋",
+    "brand": "Lenovo",
+    "price": 241,
+    "oldPrice": 269,
+    "discount": 10,
+    "rating": 4.9,
+    "reviews": 158,
+    "shipping": "Frete grátis",
+    "badge": "Oferta do dia",
+    "link": "https://meli.la/1z5YZCH"
+  },
+  {
+    "id": 8,
+    "name": "Kit Ferramentas - Oferta 8",
+    "category": "Utilidades",
+    "icon": "🛠",
+    "brand": "JBL",
+    "price": 253,
+    "oldPrice": 289,
+    "discount": 12,
+    "rating": 4.3,
+    "reviews": 171,
+    "shipping": "Entrega rápida",
+    "badge": "Promoção",
+    "link": "https://meli.la/1AjTGpp"
+  },
+  {
+    "id": 9,
+    "name": "Headset Gamer - Oferta 9",
+    "category": "Áudio",
+    "icon": "🎧",
+    "brand": "Samsung",
+    "price": 265,
+    "oldPrice": 309,
+    "discount": 14,
+    "rating": 4.4,
+    "reviews": 184,
+    "shipping": "Frete grátis",
+    "badge": "Promoção",
+    "link": "https://meli.la/2KcAi6N"
+  },
+  {
+    "id": 10,
+    "name": "Relógio Inteligente - Oferta 10",
+    "category": "Smartwatches",
+    "icon": "⌚",
+    "brand": "Xiaomi",
+    "price": 97,
+    "oldPrice": 149,
+    "discount": 35,
+    "rating": 4.5,
+    "reviews": 197,
+    "shipping": "Entrega rápida",
+    "badge": "Oferta do dia",
+    "link": "https://meli.la/182RMev"
+  },
+  {
+    "id": 11,
+    "name": "Teclado - Oferta 11",
+    "category": "Informática",
+    "icon": "💻",
+    "brand": "Baseus",
+    "price": 149,
+    "oldPrice": 169,
+    "discount": 12,
+    "rating": 4.6,
+    "reviews": 210,
+    "shipping": "Frete grátis",
+    "badge": "Mais vendido",
+    "link": "https://meli.la/1a8V7Ms"
+  },
+  {
+    "id": 12,
+    "name": "Teclado Gamer - Oferta 12",
+    "category": "Gamer",
+    "icon": "🎮",
+    "brand": "Logitech",
+    "price": 161,
+    "oldPrice": 189,
+    "discount": 15,
+    "rating": 4.7,
+    "reviews": 223,
+    "shipping": "Entrega rápida",
+    "badge": "Promoção",
+    "link": "https://meli.la/2crkRez"
+  },
+  {
+    "id": 13,
+    "name": "Cabo USB-C - Oferta 13",
+    "category": "Celulares",
+    "icon": "📱",
+    "brand": "Multilaser",
+    "price": 173,
+    "oldPrice": 209,
+    "discount": 17,
+    "rating": 4.8,
+    "reviews": 236,
+    "shipping": "Frete grátis",
+    "badge": "Oferta do dia",
+    "link": "https://meli.la/2m7j7Xp"
+  },
+  {
+    "id": 14,
+    "name": "Alexa - Oferta 14",
+    "category": "Casa Inteligente",
+    "icon": "🏠",
+    "brand": "Genérico",
+    "price": 185,
+    "oldPrice": 229,
+    "discount": 19,
+    "rating": 4.9,
+    "reviews": 249,
+    "shipping": "Entrega rápida",
+    "badge": "Promoção",
+    "link": "https://meli.la/1Donhod"
+  },
+  {
+    "id": 15,
+    "name": "Fonte - Oferta 15",
+    "category": "Energia",
+    "icon": "🔋",
+    "brand": "Lenovo",
+    "price": 197,
+    "oldPrice": 249,
+    "discount": 21,
+    "rating": 4.3,
+    "reviews": 262,
+    "shipping": "Frete grátis",
+    "badge": "Promoção",
+    "link": "https://meli.la/11M2ZDV"
+  },
+  {
+    "id": 16,
+    "name": "Organizador - Oferta 16",
+    "category": "Utilidades",
+    "icon": "🛠",
+    "brand": "JBL",
+    "price": 249,
+    "oldPrice": 269,
+    "discount": 7,
+    "rating": 4.4,
+    "reviews": 275,
+    "shipping": "Entrega rápida",
+    "badge": "Oferta do dia",
+    "link": "https://meli.la/1UTNS2q"
+  },
+  {
+    "id": 17,
+    "name": "Caixa de Som - Oferta 17",
+    "category": "Áudio",
+    "icon": "🎧",
+    "brand": "Samsung",
+    "price": 261,
+    "oldPrice": 289,
+    "discount": 10,
+    "rating": 4.5,
+    "reviews": 288,
+    "shipping": "Frete grátis",
+    "badge": "Promoção",
+    "link": "https://meli.la/156PXGk"
+  },
+  {
+    "id": 18,
+    "name": "Pulseira Inteligente - Oferta 18",
+    "category": "Smartwatches",
+    "icon": "⌚",
+    "brand": "Xiaomi",
+    "price": 273,
+    "oldPrice": 309,
+    "discount": 12,
+    "rating": 4.6,
+    "reviews": 301,
+    "shipping": "Entrega rápida",
+    "badge": "Promoção",
+    "link": "https://meli.la/1JxQaZ7"
+  },
+  {
+    "id": 19,
+    "name": "SSD - Oferta 19",
+    "category": "Informática",
+    "icon": "💻",
+    "brand": "Baseus",
+    "price": 105,
+    "oldPrice": 149,
+    "discount": 30,
+    "rating": 4.7,
+    "reviews": 314,
+    "shipping": "Frete grátis",
+    "badge": "Oferta do dia",
+    "link": "https://meli.la/2UqUucE"
+  },
+  {
+    "id": 20,
+    "name": "Headset Gamer RGB - Oferta 20",
+    "category": "Gamer",
+    "icon": "🎮",
+    "brand": "Logitech",
+    "price": 117,
+    "oldPrice": 169,
+    "discount": 31,
+    "rating": 4.8,
+    "reviews": 327,
+    "shipping": "Entrega rápida",
+    "badge": "Promoção",
+    "link": "https://meli.la/1SxceZd"
+  },
+  {
+    "id": 21,
+    "name": "Power Bank - Oferta 21",
+    "category": "Celulares",
+    "icon": "📱",
+    "brand": "Multilaser",
+    "price": 169,
+    "oldPrice": 189,
+    "discount": 11,
+    "rating": 4.9,
+    "reviews": 340,
+    "shipping": "Frete grátis",
+    "badge": "Mais vendido",
+    "link": "https://meli.la/1UC2aTv"
+  },
+  {
+    "id": 22,
+    "name": "Câmera Wi-Fi - Oferta 22",
+    "category": "Casa Inteligente",
+    "icon": "🏠",
+    "brand": "Genérico",
+    "price": 181,
+    "oldPrice": 209,
+    "discount": 13,
+    "rating": 4.3,
+    "reviews": 353,
+    "shipping": "Entrega rápida",
+    "badge": "Oferta do dia",
+    "link": "https://meli.la/1jxfLYr"
+  },
+  {
+    "id": 23,
+    "name": "Pilhas Recarregáveis - Oferta 23",
+    "category": "Energia",
+    "icon": "🔋",
+    "brand": "Lenovo",
+    "price": 193,
+    "oldPrice": 229,
+    "discount": 16,
+    "rating": 4.4,
+    "reviews": 366,
+    "shipping": "Frete grátis",
+    "badge": "Promoção",
+    "link": "https://meli.la/2xWLatN"
+  },
+  {
+    "id": 24,
+    "name": "Lanterna LED - Oferta 24",
+    "category": "Utilidades",
+    "icon": "🛠",
+    "brand": "JBL",
+    "price": 205,
+    "oldPrice": 249,
+    "discount": 18,
+    "rating": 4.5,
+    "reviews": 379,
+    "shipping": "Entrega rápida",
+    "badge": "Promoção",
+    "link": "https://meli.la/2ppRrYK"
+  },
+  {
+    "id": 25,
+    "name": "Microfone - Oferta 25",
+    "category": "Áudio",
+    "icon": "🎧",
+    "brand": "Samsung",
+    "price": 217,
+    "oldPrice": 269,
+    "discount": 19,
+    "rating": 4.6,
+    "reviews": 392,
+    "shipping": "Frete grátis",
+    "badge": "Oferta do dia",
+    "link": "https://meli.la/2usrsKA"
+  },
+  {
+    "id": 26,
+    "name": "Relógio Fitness - Oferta 26",
+    "category": "Smartwatches",
+    "icon": "⌚",
+    "brand": "Xiaomi",
+    "price": 269,
+    "oldPrice": 289,
+    "discount": 7,
+    "rating": 4.7,
+    "reviews": 405,
+    "shipping": "Entrega rápida",
+    "badge": "Promoção",
+    "link": "https://meli.la/1ybVoPK"
+  },
+  {
+    "id": 27,
+    "name": "Monitor - Oferta 27",
+    "category": "Informática",
+    "icon": "💻",
+    "brand": "Baseus",
+    "price": 281,
+    "oldPrice": 309,
+    "discount": 9,
+    "rating": 4.8,
+    "reviews": 418,
+    "shipping": "Frete grátis",
+    "badge": "Promoção",
+    "link": "https://meli.la/1VzVTAK"
+  },
+  {
+    "id": 28,
+    "name": "Controle Gamer - Oferta 28",
+    "category": "Gamer",
+    "icon": "🎮",
+    "brand": "Logitech",
+    "price": 113,
+    "oldPrice": 149,
+    "discount": 24,
+    "rating": 4.9,
+    "reviews": 431,
+    "shipping": "Entrega rápida",
+    "badge": "Oferta do dia",
+    "link": "https://meli.la/1K2qE7Q"
+  },
+  {
+    "id": 29,
+    "name": "Capa - Oferta 29",
+    "category": "Celulares",
+    "icon": "📱",
+    "brand": "Multilaser",
+    "price": 125,
+    "oldPrice": 169,
+    "discount": 26,
+    "rating": 4.3,
+    "reviews": 444,
+    "shipping": "Frete grátis",
+    "badge": "Promoção",
+    "link": "https://meli.la/2eAyXiP"
+  },
+  {
+    "id": 30,
+    "name": "Tomada Inteligente - Oferta 30",
+    "category": "Casa Inteligente",
+    "icon": "🏠",
+    "brand": "Genérico",
+    "price": 137,
+    "oldPrice": 189,
+    "discount": 28,
+    "rating": 4.4,
+    "reviews": 457,
+    "shipping": "Entrega rápida",
+    "badge": "Promoção",
+    "link": "https://meli.la/2zp3TDb"
+  },
+  {
+    "id": 31,
+    "name": "Bateria - Oferta 31",
+    "category": "Energia",
+    "icon": "🔋",
+    "brand": "Lenovo",
+    "price": 189,
+    "oldPrice": 209,
+    "discount": 10,
+    "rating": 4.5,
+    "reviews": 470,
+    "shipping": "Frete grátis",
+    "badge": "Mais vendido",
+    "link": "https://meli.la/2cQ7WXA"
+  },
+  {
+    "id": 32,
+    "name": "Item para Carro - Oferta 32",
+    "category": "Utilidades",
+    "icon": "🛠",
+    "brand": "JBL",
+    "price": 201,
+    "oldPrice": 229,
+    "discount": 12,
+    "rating": 4.6,
+    "reviews": 483,
+    "shipping": "Entrega rápida",
+    "badge": "Promoção",
+    "link": "https://meli.la/156ir2t"
+  },
+  {
+    "id": 33,
+    "name": "Fone Sem Fio - Oferta 33",
+    "category": "Áudio",
+    "icon": "🎧",
+    "brand": "Samsung",
+    "price": 213,
+    "oldPrice": 249,
+    "discount": 14,
+    "rating": 4.7,
+    "reviews": 496,
+    "shipping": "Frete grátis",
+    "badge": "Promoção",
+    "link": "https://meli.la/2SyTT5v"
+  },
+  {
+    "id": 34,
+    "name": "Smartwatch - Oferta 34",
+    "category": "Smartwatches",
+    "icon": "⌚",
+    "brand": "Xiaomi",
+    "price": 225,
+    "oldPrice": 269,
+    "discount": 16,
+    "rating": 4.8,
+    "reviews": 509,
+    "shipping": "Entrega rápida",
+    "badge": "Oferta do dia",
+    "link": "https://meli.la/2uV2bbN"
+  },
+  {
+    "id": 35,
+    "name": "Notebook - Oferta 35",
+    "category": "Informática",
+    "icon": "💻",
+    "brand": "Baseus",
+    "price": 237,
+    "oldPrice": 289,
+    "discount": 18,
+    "rating": 4.9,
+    "reviews": 522,
+    "shipping": "Frete grátis",
+    "badge": "Promoção",
+    "link": "https://meli.la/1efxJUQ"
+  },
+  {
+    "id": 36,
+    "name": "Cadeira Gamer - Oferta 36",
+    "category": "Gamer",
+    "icon": "🎮",
+    "brand": "Logitech",
+    "price": 289,
+    "oldPrice": 309,
+    "discount": 6,
+    "rating": 4.3,
+    "reviews": 535,
+    "shipping": "Entrega rápida",
+    "badge": "Promoção",
+    "link": "https://meli.la/1dHHwNa"
+  },
+  {
+    "id": 37,
+    "name": "Película - Oferta 37",
+    "category": "Celulares",
+    "icon": "📱",
+    "brand": "Multilaser",
+    "price": 121,
+    "oldPrice": 149,
+    "discount": 19,
+    "rating": 4.4,
+    "reviews": 548,
+    "shipping": "Frete grátis",
+    "badge": "Oferta do dia",
+    "link": "https://meli.la/1cEZwaK"
+  },
+  {
+    "id": 38,
+    "name": "Fechadura Digital - Oferta 38",
+    "category": "Casa Inteligente",
+    "icon": "🏠",
+    "brand": "Genérico",
+    "price": 133,
+    "oldPrice": 169,
+    "discount": 21,
+    "rating": 4.5,
+    "reviews": 561,
+    "shipping": "Entrega rápida",
+    "badge": "Promoção",
+    "link": "https://meli.la/2SXb2df"
+  },
+  {
+    "id": 39,
+    "name": "Filtro de Linha - Oferta 39",
+    "category": "Energia",
+    "icon": "🔋",
+    "brand": "Lenovo",
+    "price": 145,
+    "oldPrice": 189,
+    "discount": 23,
+    "rating": 4.6,
+    "reviews": 574,
+    "shipping": "Frete grátis",
+    "badge": "Promoção",
+    "link": "https://meli.la/1bYWatS"
+  },
+  {
+    "id": 40,
+    "name": "Item para Cozinha - Oferta 40",
+    "category": "Utilidades",
+    "icon": "🛠",
+    "brand": "JBL",
+    "price": 157,
+    "oldPrice": 209,
+    "discount": 25,
+    "rating": 4.7,
+    "reviews": 587,
+    "shipping": "Entrega rápida",
+    "badge": "Oferta do dia",
+    "link": "https://meli.la/29tw3DD"
+  },
+  {
+    "id": 41,
+    "name": "Soundbar - Oferta 41",
+    "category": "Áudio",
+    "icon": "🎧",
+    "brand": "Samsung",
+    "price": 209,
+    "oldPrice": 229,
+    "discount": 9,
+    "rating": 4.8,
+    "reviews": 600,
+    "shipping": "Frete grátis",
+    "badge": "Mais vendido",
+    "link": "https://meli.la/2AVyW67"
+  },
+  {
+    "id": 42,
+    "name": "Relógio Inteligente - Oferta 42",
+    "category": "Smartwatches",
+    "icon": "⌚",
+    "brand": "Xiaomi",
+    "price": 221,
+    "oldPrice": 249,
+    "discount": 11,
+    "rating": 4.9,
+    "reviews": 613,
+    "shipping": "Entrega rápida",
+    "badge": "Promoção",
+    "link": "https://meli.la/1Ua6is1"
+  },
+  {
+    "id": 43,
+    "name": "Webcam - Oferta 43",
+    "category": "Informática",
+    "icon": "💻",
+    "brand": "Baseus",
+    "price": 233,
+    "oldPrice": 269,
+    "discount": 13,
+    "rating": 4.3,
+    "reviews": 626,
+    "shipping": "Frete grátis",
+    "badge": "Oferta do dia",
+    "link": "https://meli.la/13Lo43R"
+  },
+  {
+    "id": 44,
+    "name": "Mousepad - Oferta 44",
+    "category": "Gamer",
+    "icon": "🎮",
+    "brand": "Logitech",
+    "price": 245,
+    "oldPrice": 289,
+    "discount": 15,
+    "rating": 4.4,
+    "reviews": 639,
+    "shipping": "Entrega rápida",
+    "badge": "Promoção",
+    "link": "https://meli.la/1wuBZzv"
+  },
+  {
+    "id": 45,
+    "name": "Suporte Veicular - Oferta 45",
+    "category": "Celulares",
+    "icon": "📱",
+    "brand": "Multilaser",
+    "price": 257,
+    "oldPrice": 309,
+    "discount": 17,
+    "rating": 4.5,
+    "reviews": 652,
+    "shipping": "Frete grátis",
+    "badge": "Promoção",
+    "link": "https://meli.la/2yoxeJU"
+  },
+  {
+    "id": 46,
+    "name": "Lâmpada Inteligente - Oferta 46",
+    "category": "Casa Inteligente",
+    "icon": "🏠",
+    "brand": "Genérico",
+    "price": 129,
+    "oldPrice": 149,
+    "discount": 13,
+    "rating": 4.6,
+    "reviews": 665,
+    "shipping": "Entrega rápida",
+    "badge": "Oferta do dia",
+    "link": "https://meli.la/28WkiRy"
+  },
+  {
+    "id": 47,
+    "name": "Carregador Rápido - Oferta 47",
+    "category": "Energia",
+    "icon": "🔋",
+    "brand": "Lenovo",
+    "price": 141,
+    "oldPrice": 169,
+    "discount": 17,
+    "rating": 4.7,
+    "reviews": 678,
+    "shipping": "Frete grátis",
+    "badge": "Promoção",
+    "link": "https://meli.la/1iu1jMt"
+  },
+  {
+    "id": 48,
+    "name": "Kit Ferramentas - Oferta 48",
+    "category": "Utilidades",
+    "icon": "🛠",
+    "brand": "JBL",
+    "price": 153,
+    "oldPrice": 189,
+    "discount": 19,
+    "rating": 4.8,
+    "reviews": 691,
+    "shipping": "Entrega rápida",
+    "badge": "Promoção",
+    "link": "https://meli.la/2X9mmhh"
+  },
+  {
+    "id": 49,
+    "name": "Fone Bluetooth - Oferta 49",
+    "category": "Áudio",
+    "icon": "🎧",
+    "brand": "Samsung",
+    "price": 165,
+    "oldPrice": 209,
+    "discount": 21,
+    "rating": 4.9,
+    "reviews": 704,
+    "shipping": "Frete grátis",
+    "badge": "Oferta do dia",
+    "link": "https://meli.la/2DFrD54"
+  },
+  {
+    "id": 50,
+    "name": "Pulseira Inteligente - Oferta 50",
+    "category": "Smartwatches",
+    "icon": "⌚",
+    "brand": "Xiaomi",
+    "price": 177,
+    "oldPrice": 229,
+    "discount": 23,
+    "rating": 4.3,
+    "reviews": 717,
+    "shipping": "Entrega rápida",
+    "badge": "Promoção",
+    "link": "https://meli.la/13zAmdn"
+  },
+  {
+    "id": 51,
+    "name": "Hub USB - Oferta 51",
+    "category": "Informática",
+    "icon": "💻",
+    "brand": "Baseus",
+    "price": 229,
+    "oldPrice": 249,
+    "discount": 8,
+    "rating": 4.4,
+    "reviews": 730,
+    "shipping": "Frete grátis",
+    "badge": "Mais vendido",
+    "link": "https://meli.la/12RYkQc"
+  },
+  {
+    "id": 52,
+    "name": "Mouse Gamer - Oferta 52",
+    "category": "Gamer",
+    "icon": "🎮",
+    "brand": "Logitech",
+    "price": 241,
+    "oldPrice": 269,
+    "discount": 10,
+    "rating": 4.5,
+    "reviews": 743,
+    "shipping": "Entrega rápida",
+    "badge": "Oferta do dia",
+    "link": "https://meli.la/15NZt22"
+  },
+  {
+    "id": 53,
+    "name": "Carregador Turbo - Oferta 53",
+    "category": "Celulares",
+    "icon": "📱",
+    "brand": "Multilaser",
+    "price": 253,
+    "oldPrice": 289,
+    "discount": 12,
+    "rating": 4.6,
+    "reviews": 756,
+    "shipping": "Frete grátis",
+    "badge": "Promoção",
+    "link": "https://meli.la/1gfUmfD"
+  },
+  {
+    "id": 54,
+    "name": "Alexa - Oferta 54",
+    "category": "Casa Inteligente",
+    "icon": "🏠",
+    "brand": "Genérico",
+    "price": 265,
+    "oldPrice": 309,
+    "discount": 14,
+    "rating": 4.7,
+    "reviews": 769,
+    "shipping": "Entrega rápida",
+    "badge": "Promoção",
+    "link": "https://meli.la/1wQZq4Z"
+  },
+  {
+    "id": 55,
+    "name": "Fonte - Oferta 55",
+    "category": "Energia",
+    "icon": "🔋",
+    "brand": "Lenovo",
+    "price": 97,
+    "oldPrice": 149,
+    "discount": 35,
+    "rating": 4.8,
+    "reviews": 782,
+    "shipping": "Frete grátis",
+    "badge": "Oferta do dia",
+    "link": "https://meli.la/1Qw8MyH"
+  }
+];
+
+const categoryData = [
+  { name: "Áudio", icon: "🎧", desc: "Fones, caixas de som e headsets" },
+  { name: "Smartwatches", icon: "⌚", desc: "Relógios e pulseiras inteligentes" },
+  { name: "Informática", icon: "💻", desc: "Mouse, teclado, SSD e monitor" },
+  { name: "Gamer", icon: "🎮", desc: "Periféricos e acessórios gamer" },
+  { name: "Celulares", icon: "📱", desc: "Cabos, capas e carregadores" },
+  { name: "Casa Inteligente", icon: "🏠", desc: "Alexa, câmeras e automação" },
+  { name: "Energia", icon: "🔋", desc: "Carregadores, fontes e baterias" },
+  { name: "Utilidades", icon: "🛠", desc: "Ferramentas, carro e cozinha" }
+];
+
+let activeCategory = "Todas";
+let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+let compare = [];
+
+const grid = document.getElementById("productGrid");
+const categoryFilter = document.getElementById("categoryFilter");
+const brandFilter = document.getElementById("brandFilter");
+const priceFilter = document.getElementById("priceFilter");
+const ratingFilter = document.getElementById("ratingFilter");
+const searchInput = document.getElementById("searchInput");
+
+function money(value) {
+  return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+}
+
+function init() {
+  renderCategories();
+  renderTabs();
+  fillFilters();
+  renderProducts();
+  renderTopProducts();
+  renderNewProducts();
+  startTimer();
+}
+
+function renderCategories() {
+  const el = document.getElementById("categoryGrid");
+  el.innerHTML = categoryData.map(cat => `
+    <button class="cat" onclick="setCategory('${cat.name}')">
+      <div class="icon">${cat.icon}</div>
+      <strong>${cat.name}</strong>
+      <span class="muted">${cat.desc}</span>
+    </button>
+  `).join("");
+}
+
+function renderTabs() {
+  const tabs = document.getElementById("tabs");
+  const cats = ["Todas", ...categoryData.map(c => c.name)];
+  tabs.innerHTML = cats.map(cat => `
+    <button class="tab ${activeCategory === cat ? "active" : ""}" onclick="setCategory('${cat}')">${cat}</button>
+  `).join("");
+}
+
+function fillFilters() {
+  categoryData.forEach(c => {
+    categoryFilter.innerHTML += `<option value="${c.name}">${c.name}</option>`;
+  });
+
+  [...new Set(products.map(p => p.brand))].forEach(b => {
+    brandFilter.innerHTML += `<option value="${b}">${b}</option>`;
+  });
+}
+
+function setCategory(cat) {
+  activeCategory = cat;
+  categoryFilter.value = cat;
+  renderTabs();
+  renderProducts();
+  document.getElementById("ofertas").scrollIntoView({behavior:"smooth"});
+}
+
+function getFilteredProducts() {
+  const q = searchInput.value.toLowerCase().trim();
+  const cat = categoryFilter.value;
+  const brand = brandFilter.value;
+  const rating = Number(ratingFilter.value);
+  const price = priceFilter.value;
+
+  return products.filter(p => {
+    const matchesSearch =
+      p.name.toLowerCase().includes(q) ||
+      p.category.toLowerCase().includes(q) ||
+      p.brand.toLowerCase().includes(q) ||
+      (q === "fone" && p.category === "Áudio") ||
+      (q === "mouse" && ["Gamer", "Informática"].includes(p.category)) ||
+      (q === "carregador" && ["Energia", "Celulares"].includes(p.category));
+
+    const matchesCategory =
+      (activeCategory === "Todas" || p.category === activeCategory) &&
+      (cat === "Todas" || p.category === cat);
+
+    const matchesBrand = brand === "Todas" || p.brand === brand;
+    const matchesRating = p.rating >= rating;
+
+    let matchesPrice = true;
+    if (price !== "all") {
+      const [min, max] = price.split("-").map(Number);
+      matchesPrice = p.price >= min && p.price <= max;
+    }
+
+    return matchesSearch && matchesCategory && matchesBrand && matchesRating && matchesPrice;
+  });
+}
+
+function renderProducts() {
+  const filtered = getFilteredProducts();
+  grid.innerHTML = filtered.map(productCard).join("");
+}
+
+function productCard(p) {
+  const fav = favorites.includes(p.id);
+
+  // 📸 REGRA DA IMAGEM: Se p.image existir, cria a tag <img>. Se não, usa o emoji p.icon
+  const imagemOuEmoji = p.image 
+    ? `<img src="${p.image}" alt="${p.name}" style="width: 100%; height: 100%; object-fit: contain;">`
+    : p.icon;
+
+  return `
+    <article class="product">
+      <div class="product-top">
+        <span class="tag">${p.badge} • -${p.discount}%</span>
+        <button class="heart ${fav ? "active" : ""}" onclick="toggleFavorite(${p.id})">❤️</button>
+      </div>
+      
+      <div class="product-image" style="display: flex; align-items: center; justify-content: center; height: 180px; overflow: hidden; background: #fff;">
+        ${imagemOuEmoji}
+      </div>
+      
+      <h3>${p.name}</h3>
+      <div class="rating">★★★★★ ${p.rating} <span class="muted">(${p.reviews})</span></div>
+      <div class="price-row">
+        <span class="price">${money(p.price)}</span>
+        <span class="old">${money(p.oldPrice)}</span>
+      </div>
+      <div class="shipping">${p.shipping}</div>
+      <div class="card-actions">
+        <a class="btn" href="${p.link}" target="_blank" rel="nofollow sponsored noopener">Comprar Agora</a>
+        <button class="compare" onclick="toggleCompare(${p.id})">↔</button>
+      </div>
+    </article>
+  `;
+}
+
+function renderTopProducts() {
+  document.getElementById("topProducts").innerHTML = products
+    .slice(0, 6)
+    .map((p, i) => productCard({...p, badge: "TOP " + (i+1)}))
+    .join("");
+}
+
+function renderNewProducts() {
+  document.getElementById("newProducts").innerHTML = products
+    .slice(-6)
+    .reverse()
+    .map(p => productCard({...p, badge: "Lançamento"}))
+    .join("");
+}
+
+function toggleFavorite(id) {
+  favorites = favorites.includes(id)
+    ? favorites.filter(item => item !== id)
+    : [...favorites, id];
+
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+  renderProducts();
+}
+
+function toggleCompare(id) {
+  const product = products.find(p => p.id === id);
+
+  if (compare.find(p => p.id === id)) {
+    compare = compare.filter(p => p.id !== id);
+  } else {
+    if (compare.length >= 3) {
+      alert("Você pode comparar até 3 produtos.");
+      return;
+    }
+    compare.push(product);
+  }
+
+  renderCompare();
+}
+
+function renderCompare() {
+  const box = document.getElementById("compareBox");
+  const list = document.getElementById("compareList");
+
+  if (compare.length === 0) {
+    box.classList.remove("show");
+    return;
+  }
+
+  box.classList.add("show");
+  list.innerHTML = compare.map(p => `
+    <li><strong>${p.name}</strong><br>Preço: ${money(p.price)} • Marca: ${p.brand} • Avaliação: ${p.rating}</li>
+  `).join("");
+}
+
+function clearFilters() {
+  activeCategory = "Todas";
+  searchInput.value = "";
+  categoryFilter.value = "Todas";
+  brandFilter.value = "Todas";
+  priceFilter.value = "all";
+  ratingFilter.value = "0";
+  renderTabs();
+  renderProducts();
+}
+
+function startTimer() {
+  let seconds = 3 * 60 * 60;
+  const timer = document.getElementById("timer");
+
+  setInterval(() => {
+    seconds--;
+    if (seconds <= 0) seconds = 3 * 60 * 60;
+
+    const h = String(Math.floor(seconds / 3600)).padStart(2, "0");
+    const m = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
+    const s = String(seconds % 60).padStart(2, "0");
+    timer.textContent = `${h}:${m}:${s}`;
+  }, 1000);
+}
+
+[searchInput, categoryFilter, brandFilter, priceFilter, ratingFilter].forEach(el => {
+  el.addEventListener("input", renderProducts);
+  el.addEventListener("change", () => {
+    activeCategory = categoryFilter.value;
+    renderTabs();
+    renderProducts();
+  });
+});
+
+init();
+</script>
+</body>
+</html>
